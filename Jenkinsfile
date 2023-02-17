@@ -24,14 +24,6 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Start Test'
-                sh'./mvnw test'
-                echo 'Finish Test'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
 
                 script {
                     def data = [
@@ -41,6 +33,14 @@ pipeline {
                     writeJSON(file: "data.json", json: data)
                 }
 
+                echo 'Start Test'
+                sh'./mvnw test'
+                echo 'Finish Test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {              
                 echo 'Hello Deploy 1'
                 sleep(5)
                 echo 'Hello Deploy 2'
