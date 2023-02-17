@@ -1,6 +1,13 @@
 pipeline {
     agent none
 
+    environment {
+        AUTHOR  = "Rizky Syafrullah"
+        EMAIL   = "rizkysyafrullah@gmail.com"
+        WEB     = "https://www.linkedin.com/in/rizky-syafrullah-756370170/"
+
+    }
+
     stages {
 
         stage('Prepare') {
@@ -10,6 +17,9 @@ pipeline {
                 }
             }
             steps {
+                echo("Author        : ${AUTHOR}")
+                echo("email         : ${EMAIL}")
+                echo("Web           : ${WEB}")
                 echo("Start Job     : ${env.JOB_NAME}")
                 echo("Start Build   : ${env.BUILD_NUMBER}")
                 echo("Branch Name   : ${env.BRANCH_NAME}")
