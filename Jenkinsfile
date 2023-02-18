@@ -9,7 +9,7 @@ pipeline {
     }
 
     options {
-        disableConcurrentBiuld()
+        disableConcurrentBiulds()
         timeout(time:5, unit:'MINUTES')
     }
 
