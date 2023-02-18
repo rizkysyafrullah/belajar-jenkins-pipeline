@@ -22,13 +22,14 @@ pipeline {
         timeout(time: 3, unit: 'MINUTES')
     }
 
-    stages("Parameter") {
-        agent {
+    stages{
+        stage("Parameter"){
+            agent {
                 node{
                     label "linux && java11"
                 }
             }
-        steps {
+            steps {
                 echo "Hello ${params.NAME}!"
                 echo "Your description is ${params.DESCRIPTION}"
                 echo "Your socmed is :${params.SOCIAL_MEDIA}"
@@ -36,6 +37,7 @@ pipeline {
                 echo "You secret is ${params.SECRET}!"
 
             }
+        }
     }
 
     stages {
