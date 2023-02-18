@@ -35,7 +35,6 @@ pipeline {
                 echo "Your socmed is :${params.SOCIAL_MEDIA}"
                 echo "Need to deploy: ${params.DEPLOY} to deploy!"
                 echo "You secret is ${params.SECRET}!"
-
             }
         }
     }
