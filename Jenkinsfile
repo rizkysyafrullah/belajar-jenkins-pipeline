@@ -8,6 +8,11 @@ pipeline {
 
     }
 
+    options {
+        disableConcurrentBiuld()
+        timeout(time:5, unit:'MINUTES')
+    }
+
     stages {
 
         stage('Prepare') {
