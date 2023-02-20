@@ -114,6 +114,8 @@ pipeline {
             input {
                 message "Can we Deploy??"
                 ok "yess, of coursee!"
+                message "kamu nanyea?"
+                ok "eaaa"
                 submitter "kydm,user2"
             }
             agent {
