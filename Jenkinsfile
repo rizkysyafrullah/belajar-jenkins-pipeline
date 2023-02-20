@@ -8,9 +8,9 @@ pipeline {
 
     }
 
-    triggers{
-        cron("*/5 * * * *")
-    }
+    // triggers{
+    //     cron("*/5 * * * *")
+    // }
 
     parameters {
         string(name: 'NAME', defaultValue: 'Guest', description:'What is ur name?')
@@ -111,6 +111,11 @@ pipeline {
         }
 
         stage('Deploy') {
+            input {
+                message "Can we Deploy??"
+                ok "yess, of coursee!"
+                submitter "kydm,user2"
+            }
             agent {
                 node{
                     label "linux && java11"
