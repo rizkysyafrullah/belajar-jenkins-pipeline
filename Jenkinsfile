@@ -115,6 +115,9 @@ pipeline {
                 message "Can we Deploy??"
                 ok "yess, of coursee!"
                 submitter "user2,kydm"
+                parameters{
+                    choice(name: "TARGET_ENV", choices: "['DEV','QA','PROD' ]", description: "Which Environment?")
+                }
             }
             agent {
                 node{
@@ -123,7 +126,7 @@ pipeline {
             }
             steps {              
                 echo 'Hello Deploy 1'
-                sleep(5)
+                sleep(2)
                 echo 'Hello Deploy 2'
                 echo 'Hello Deploy 3'
             }
