@@ -114,6 +114,9 @@ pipeline {
             input {
                 message "Can we Deploy??"
                 ok "yess, of coursee!"
+                submitter "user2,kydm"
+            }
+            input {
                 message "kamu nanyea?"
                 ok "eaaa"
                 submitter "kydm,user2"
