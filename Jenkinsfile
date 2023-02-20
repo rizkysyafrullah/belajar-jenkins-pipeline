@@ -8,21 +8,21 @@ pipeline {
 
     }
 
-    parameters {
+    /*parameters {
         string(name: "NAME", defaultValue: "Guest", description:"What is yor name?")
         text(name: "DESCRIPTION", defaultValue: "Guest", description:"Tell me about You")      
         booleanParam(name: "DEPLOY", defaultValue: false, description:"Need to Deploy?")
         choice(name: "SOCIAL_MEDIA", choices: ['Instagram', 'Facebook', 'Twitter', 'TikTok'], description:"Which Social Media?")
         password(name: "SECRET", defaultValue: "", description:"Encrypt Key ")
         
-    }
+    }*/
 
     options {
         disableConcurrentBuilds()
         timeout(time: 3, unit: 'MINUTES')
     }
 
-    stages{
+    /*stages{
         stage("Parameter"){
             agent {
                 node{
@@ -37,7 +37,7 @@ pipeline {
                 echo "You secret is ${params.SECRET}!"
             }
         }
-    }
+    }*/
 
     stages {
 
