@@ -116,11 +116,6 @@ pipeline {
                 ok "yess, of coursee!"
                 submitter "user2,kydm"
             }
-            input {
-                message "kamu nanyea?"
-                ok "eaaa"
-                submitter "kydm,user2"
-            }
             agent {
                 node{
                     label "linux && java11"
