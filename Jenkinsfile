@@ -116,7 +116,7 @@ pipeline {
                 ok "yess, of coursee!"
                 submitter "user2,kydm"
                 parameters{
-                    choice(name: "TARGET_ENV", choices: "['DEV','QA','PROD' ]", description: "Which Environment?")
+                    choice(name: "TARGET_ENV", choices: ['DEV','QA','PROD' ], description: "Which Environment?")
                 }
             }
             agent {
