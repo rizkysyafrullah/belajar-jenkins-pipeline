@@ -29,7 +29,7 @@ pipeline {
 
     stages { //didalam stages ada stage, nah di dalem stage nya dikasih multi stages
 
-        stage('Preparation') {
+        stage('Preparation'){
             agent {
                 node{
                     label "linux && java11"
