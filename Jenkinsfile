@@ -29,6 +29,33 @@ pipeline {
 
     stages { //didalam stages ada stage, nah di dalem stage nya dikasih multi stages
 
+        stage('OS Setup'){
+            matrix{
+                axes {
+                    axis {
+                        name "OS"
+                        values "Linux", "Windows", "Mac"
+                    }
+                    axis {
+                        name "Arch"
+                        values "32", "64"
+                    }
+                }
+            }
+            stages{
+                stage("OS Setup"){
+                    agent{
+                        node{
+                            label "linux && java11"
+                        }
+                    }
+                    steps{
+                        echo ("Setup ${OS} ${Arch}")
+                    }
+                }
+            }
+        }
+
         stage('Preparation'){
             
                 parallel{
