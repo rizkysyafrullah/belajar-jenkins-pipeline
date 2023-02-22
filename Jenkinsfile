@@ -30,8 +30,8 @@ pipeline {
     stages { //didalam stages ada stage, nah di dalem stage nya dikasih multi stages
 
         stage('Preparation'){
-            parallel {
-                stages{
+            
+                parallel{
                     stage("Prepare Java") {
                         agent {
                             node{
@@ -55,8 +55,7 @@ pipeline {
                             sleep(5)
                         }
                     }       
-                }        
-            }   
+                }         
         }
 
         stage("Parameter"){
