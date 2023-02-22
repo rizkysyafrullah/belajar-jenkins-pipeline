@@ -28,7 +28,7 @@ pipeline {
     
 
     stages { //didalam stages ada stage, nah di dalem stage nya dikasih multi stages
-            
+
         stage("Preparation") {
             agent {
                 node{
@@ -39,7 +39,7 @@ pipeline {
             stages{
                 stage("Prepare Java") {
                     steps {
-                        echo "Preparing Java"
+                        echo 'Preparing Java'
                     }
                 }
             }
@@ -47,7 +47,7 @@ pipeline {
             stages{
                 stage("Prepare Maven") {
                     steps {
-                        echo "Preparing Maven"
+                        echo 'Preparing Maven'
                     }
                 }
             }        
