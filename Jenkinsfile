@@ -30,27 +30,33 @@ pipeline {
     stages { //didalam stages ada stage, nah di dalem stage nya dikasih multi stages
 
         stage('Preparation'){
-            agent {
-                node{
-                    label "linux && java11"
-                }
-            }
-            
-            stages{
-                stage("Prepare Java") {
-                    steps {
-                        echo 'Preparing Java'
-                        sleep(5)
+            parallel {
+                stages{
+                    stage("Prepare Java") {
+                        agent {
+                            node{
+                                label "linux && java11"
+                            }
+                        }
+                        steps {
+                            echo 'Preparing Java'
+                            sleep(5)
+                        }
                     }
-                }
-                     
-                stage("Prepare Maven") {
-                    steps {
-                        echo 'Preparing Maven'
-                        sleep(5)
-                    }
-                }       
-            }        
+                        
+                    stage("Prepare Maven") {
+                        agent {
+                            node{
+                                label "linux && java11"
+                            }
+                        }                    
+                        steps {
+                            echo 'Preparing Maven'
+                            sleep(5)
+                        }
+                    }       
+                }        
+            }   
         }
 
         stage("Parameter"){
