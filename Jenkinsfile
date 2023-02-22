@@ -40,12 +40,14 @@ pipeline {
                 stage("Prepare Java") {
                     steps {
                         echo 'Preparing Java'
+                        sleep(5)
                     }
                 }
                      
                 stage("Prepare Maven") {
                     steps {
                         echo 'Preparing Maven'
+                        sleep(5)
                     }
                 }       
             }        
