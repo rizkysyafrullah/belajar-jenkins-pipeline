@@ -219,7 +219,7 @@ pipeline {
                     credentialsIs: "rizky_rahasia",
                     usernameVariable: "USER",
                     passwordVariable: "PASSWORD"
-                ))]) {
+                )]) {
                     sh('echo "Release it with -u $USER -p $PASSWORD" > "release.txt"')
                 }
             }
